@@ -16,7 +16,7 @@ function TaskForm({onAddNewTask}){
     return(
     <form className="new_task" onSubmit={handleSubmit}>
       <label>
-        Task:
+        New Task:
         <input
           type="text"
           name="name"
