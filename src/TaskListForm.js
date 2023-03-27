@@ -16,7 +16,7 @@ function TaskListForm({onAddNewList}){
     return(
     <form className="NewList" onSubmit={handleSubmit}>
       <label>
-        List Name:
+        New List:
         <input
           type="text"
           name="name"
