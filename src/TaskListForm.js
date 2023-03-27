@@ -7,6 +7,7 @@ function TaskListForm({onAddNewList}){
     function handleSubmit(e) {
         e.preventDefault();
         onAddNewList(listName)
+        setListName('')
     }
 
     function handleChange(e){
