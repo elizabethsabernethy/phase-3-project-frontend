@@ -11,7 +11,7 @@ function Task({list}){
     }
 
     return(
-        <div>
+        <div className="task_list">
             <h2>{list}</h2>
             <button onClick={handleDelete}>🗑️</button>
             <button onClick={handleEdit}>✏️</button>
