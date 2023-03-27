@@ -6,7 +6,7 @@ function TaskListContainer(){
     const[lists, setLists]=useState([])
 
     function handleNewList(newList){
-        setLists(...lists, newList)
+        setLists([...lists, newList])
     }
 
     return(
