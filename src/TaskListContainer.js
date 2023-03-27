@@ -14,7 +14,7 @@ function TaskListContainer(){
             <TaskListForm onAddNewList={handleNewList}/>
             <ul className="TaskList">
                 {lists.map((list)=>{
-                    <TaskList list={list}/>
+                    return <TaskList list={list}/>
                 })}
             </ul>
         </div>
