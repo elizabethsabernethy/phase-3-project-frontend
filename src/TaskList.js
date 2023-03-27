@@ -22,6 +22,9 @@ function Task({list}){
             <button onClick={handleDelete}>🗑️</button>
             <button onClick={handleEdit}>✏️</button>
             <TaskForm onAddNewTask={handleNewTask}/>
+            {tasks.map((task)=>{
+                return <Task task={task}/>
+            })}
         </div>
     )
 }
