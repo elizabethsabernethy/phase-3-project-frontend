@@ -13,7 +13,8 @@ function TaskListForm({onAddNewList}){
           },
           body: JSON.stringify({
             name: listName
-          }),
+          }
+          ),
         })
           .then((resp) => resp.json())
           .then((newList) => {
