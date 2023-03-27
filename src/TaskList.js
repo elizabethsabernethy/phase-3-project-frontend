@@ -1,9 +1,9 @@
 import React from "react";
 
-function Task(){
+function Task({list}){
     return(
         <div>
-
+            <h2>{list}</h2>
         </div>
     )
 }
