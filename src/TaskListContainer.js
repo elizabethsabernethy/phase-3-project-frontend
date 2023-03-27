@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TaskListForm from "./TaskListForm";
 
-function TaskList(){
+function TaskListContainer(){
     const[lists, setLists]=useState([])
 
     function handleNewList(newList){
@@ -15,4 +15,4 @@ function TaskList(){
     )
 }
 
-export default TaskList;
+export default TaskListContainer;
