@@ -7,6 +7,7 @@ function TaskForm({onAddNewTask}){
     function handleSubmit(e) {
         e.preventDefault();
         onAddNewTask(taskName)
+        setTaskName('')
     }
 
     function handleChange(e){
