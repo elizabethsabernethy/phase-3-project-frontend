@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 function TaskListForm(){
 
+    const[listName, setListName]=useState("")
+
     function handleSubmit(e) {
         e.preventDefault();
+        console.log(listName)
     }
 
     function handleChange(e){
-        console.log(e.target.value)
+        setListName(e.target.value)
     }
 
     return(
@@ -17,7 +20,7 @@ function TaskListForm(){
         <input
           type="text"
           name="name"
-        //   value={name}
+          value={listName}
           onChange={handleChange}
         />
       </label>
