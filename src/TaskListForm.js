@@ -6,8 +6,20 @@ function TaskListForm({onAddNewList}){
 
     function handleSubmit(e) {
         e.preventDefault();
-        onAddNewList(listName)
-        setListName('')
+        fetch("http://localhost:9292/task-lists", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: listName
+          }),
+        })
+          .then((resp) => resp.json())
+          .then((newList) => {
+            onAddNewList(newList);
+            setListName("");
+          });
     }
 
     function handleChange(e){
