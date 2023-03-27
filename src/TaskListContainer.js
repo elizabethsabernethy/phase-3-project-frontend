@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TaskListForm from "./TaskListForm";
 import TaskList from "./TaskList";
 
 function TaskListContainer(){
     const[lists, setLists]=useState([])
+
+    useEffect(()=>{
+        fetch('http://localhost:9292')
+        .then((resp)=>resp.json())
+        .then((task_lists)=>setLists(task_lists))
+    },[])
 
     function handleNewList(newList){
         setLists([...lists, newList])
