@@ -6,7 +6,7 @@ function TaskListContainer(){
     const[lists, setLists]=useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:9292')
+        fetch('http://localhost:9292/')
         .then((resp)=>resp.json())
         .then((task_lists)=>setLists(task_lists))
     },[])
