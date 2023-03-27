@@ -6,6 +6,10 @@ function TaskListForm(){
         e.preventDefault();
     }
 
+    function handleChange(e){
+        console.log(e.target.value)
+    }
+
     return(
     <form className="NewList" onSubmit={handleSubmit}>
       <label>
@@ -14,7 +18,7 @@ function TaskListForm(){
           type="text"
           name="name"
         //   value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={handleChange}
         />
       </label>
 
