@@ -20,7 +20,7 @@ function TaskListContainer(){
             <TaskListForm onAddNewList={handleNewList}/>
             <ul className="task_list_list">
                 {lists.map((list)=>{
-                    return <TaskList list={list}/>
+                    return <TaskList list={list} key={list.id}/>
                 })}
             </ul>
         </div>
