@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
-function TaskForm(){
+function TaskForm({onAddNewTask}){
 
     const[taskName, setTaskName]=useState("")
 
     function handleSubmit(e) {
         e.preventDefault();
+        onAddNewTask(taskName)
     }
 
     function handleChange(e){
