@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import TaskForm from "./TaskForm";
+import Task from "./Task";
 
-function Task({list}){
+function TaskList({list}){
     const[tasks, setTasks]=useState([])
 
     function handleNewTask(newTask){
@@ -29,4 +30,4 @@ function Task({list}){
     )
 }
 
-export default Task;
+export default TaskList;
