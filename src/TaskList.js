@@ -36,6 +36,14 @@ function TaskList({list, onDeleteList}){
     return(
         <div className="task_list">
             <h2>{list.name}</h2>
+            <label>
+                Important
+                <input type="checkbox"></input>
+            </label>
+            <label>
+                Urgent
+                <input type="checkbox"></input>
+            </label>
             <button onClick={handleDelete}>🗑️</button>
             <button onClick={handleEdit}>✏️</button>
             <TaskForm onAddNewTask={handleNewTask} list_id={list.id}/>
