@@ -5,5 +5,8 @@
 - each task in the list should have an edit button (to change content), a delete button, and a check button to show the task completed, but not remove it from the list.
 - the task lists to be boxes on the page that expand or minimize to show just task list name, or task list name and list of tasks.
 - tasks auto organized by importance and urgency.
-- has 3 filters, one for importance, one for urgency, and one for completion status
+- has 3 filters for task-lists, one for importance, one for urgency, and one for completion status
+- has hide completed button
 - can search for specific task-list
+- each task list individually should be able to organize tasks based on importance, urgency, or completed.
+- has hide completed button within task-list
