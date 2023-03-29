@@ -76,6 +76,17 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
           setTasks(updatedTasks)
     }
 
+    function handleTaskCompletion(updatedTask){
+        const updatedTasks = tasks.map((task) => {
+            if (task.id === updatedTask.id) {
+              return updatedTask;
+            } else {
+              return task;
+            }
+          });
+          setTasks(updatedTasks)
+    }
+
     return(
         <div className="task_list">
             <h2>{list.name}</h2>
@@ -103,6 +114,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
                 onDeleteTask={handleDeleteTask} 
                 onUpdateTaskImportance={handleTaskImportanceChange}
                 onUpdateTaskUrgency={handleTaskUrgencyChange}
+                onUpdateTaskCompletion={handleTaskCompletion}
                 key={task.id}/>
             }): null} 
         </div>
