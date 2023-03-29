@@ -49,10 +49,6 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
       .then((updatedList) => onUpdateListUrgency(updatedList));
     }
 
-    function handleCompleted(){
-        console.log("task-list complete, yay")
-    }
-
     function handleDeleteTask(deletedTask){
         const updatedTasks= tasks.filter((task) => task.id !== deletedTask.id);
         setTasks(updatedTasks);
