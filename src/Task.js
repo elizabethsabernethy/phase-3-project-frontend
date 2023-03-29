@@ -16,7 +16,7 @@ function Task({task}){
     }
     return(
         <div>
-            <h4 style={completed ? {textDecorationLine: 'line-through', textDecorationStyle: 'solid'} : null}>{task}</h4>
+            <h4 style={completed ? {textDecorationLine: 'line-through', textDecorationStyle: 'solid'} : null}>{task.name}</h4>
             <button onClick={handleDelete}>🗑️</button>
             <button onClick={handleEdit}>✏️</button>
             <button onClick={handleComplete}>✅</button>
