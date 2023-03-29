@@ -21,7 +21,7 @@ function TaskList({list}){
             <h2>{list.name}</h2>
             <button onClick={handleDelete}>🗑️</button>
             <button onClick={handleEdit}>✏️</button>
-            <TaskForm onAddNewTask={handleNewTask}/>
+            <TaskForm onAddNewTask={handleNewTask} list_id={list.id}/>
             {list.tasks.map((task)=>{
                 return <Task task={task} key={task.id}/>
             })}
