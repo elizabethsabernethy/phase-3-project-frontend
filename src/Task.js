@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency}){
-    const[completed, setCompleted]=useState(false)
+function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, onUpdateTaskCompletion}){
 
     function handleDelete(){
      fetch(`http://localhost:9292/tasks/${task.id}`, {
@@ -44,11 +43,22 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency})
     }
 
     function handleComplete(){
-        setCompleted(completed => !completed)
+        fetch(`http://localhost:9292/tasks/complete/${task.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            complete: !task.complete,
+          }),
+        })
+          .then((resp) => resp.json())
+          .then((updatedTask) => onUpdateTaskCompletion(updatedTask));
     }
+
     return(
         <div>
-            <h4 style={completed ? {textDecorationLine: 'line-through', textDecorationStyle: 'solid'} : null}>{task.name}</h4>
+            <h4 style={task.complete ? {textDecorationLine: 'line-through', textDecorationStyle: 'solid'} : null}>{task.name}</h4>
             <label>
                 Important
                 <input 
