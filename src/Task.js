@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 
-function Task({task}){
+function Task({task, onDeleteTask}){
     const[completed, setCompleted]=useState(false)
 
     function handleDelete(){
-        console.log('deleted')
+     fetch(`http://localhost:9292/tasks/${task.id}`, {
+          method: "DELETE",
+          })
+            .then((resp) => resp.json())
+            .then(() => onDeleteTask(task));
     }
 
     function handleEdit(){
