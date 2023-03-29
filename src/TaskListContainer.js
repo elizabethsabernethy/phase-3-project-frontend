@@ -15,12 +15,17 @@ function TaskListContainer(){
         setLists([...lists, newList])
     }
 
+    function handleDeleteList(deletedList) {
+        const updatedLists = lists.filter((list) => list.id !== deletedList.id);
+        setLists(updatedLists);
+      }
+
     return(
         <div>
             <TaskListForm onAddNewList={handleNewList}/>
             <ul className="task_list_list">
                 {lists.map((list)=>{
-                    return <TaskList list={list} key={list.id}/>
+                    return <TaskList list={list} onDeleteList={handleDeleteList} key={list.id}/>
                 })}
             </ul>
         </div>
