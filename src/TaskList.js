@@ -53,6 +53,11 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
         console.log("task-list complete, yay")
     }
 
+    function handleDeleteTask(deletedTask){
+        const updatedTasks= tasks.filter((task) => task.id !== deletedTask.id);
+        setTasks(updatedTasks);
+    }
+
     return(
         <div className="task_list">
             <h2>{list.name}</h2>
@@ -76,7 +81,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
             <button onClick={handleEdit}>✏️</button>
             <TaskForm onAddNewTask={handleNewTask} list_id={list.id}/>
             {typeof tasks !== "undefined" ? tasks.map((task)=>{
-                return <Task task={task} key={task.id}/>
+                return <Task task={task} onDeleteTask={handleDeleteTask} key={task.id}/>
             }): null} 
         </div>
     )
