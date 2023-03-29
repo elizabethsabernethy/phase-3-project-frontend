@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TaskForm from "./TaskForm";
 import Task from "./Task";
 
-function TaskList({list}){
+function TaskList({list, onDeleteList}){
     const[tasks, setTasks] = useState(list.tasks)
 
     function handleNewTask(newTask){
@@ -10,7 +10,11 @@ function TaskList({list}){
     }
 
     function handleDelete(){
-        console.log('deleted')
+        fetch("http://localhost:9292/task-lists/:id", {
+          method: "DELETE",
+          })
+            .then((resp) => resp.json())
+            .then(() => onDeleteList(list));
     }
 
     function handleEdit(){
