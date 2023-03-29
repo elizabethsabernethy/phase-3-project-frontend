@@ -6,9 +6,10 @@ function TaskListContainer(){
     const[lists, setLists]=useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:9292/')
+        fetch('http://localhost:9292/task-lists')
         .then((resp)=>resp.json())
-        .then((task_lists)=>setLists(task_lists))
+        .then((task_lists)=>setLists(task_lists)) // <--- console logs twice? 
+        // When ^ uses setLists, app throws error about objects not being react children?
     },[])
 
     function handleNewList(newList){
