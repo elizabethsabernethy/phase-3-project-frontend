@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TaskForm from "./TaskForm";
 import Task from "./Task";
 
-function TaskList({list, onDeleteList, onUpdateListImportance}){
+function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgency}){
     const[tasks, setTasks] = useState(list.tasks)
     const[importantChecked, setImportantChecked]= useState(false)
     const[urgentChecked, setUrgentChecked]= useState(false)    
