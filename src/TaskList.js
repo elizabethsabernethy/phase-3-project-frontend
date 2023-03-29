@@ -10,7 +10,7 @@ function TaskList({list, onDeleteList}){
     }
 
     function handleDelete(){
-        fetch("http://localhost:9292/task-lists/:id", {
+        fetch(`http://localhost:9292/task-lists/${list.id}`, {
           method: "DELETE",
           })
             .then((resp) => resp.json())
