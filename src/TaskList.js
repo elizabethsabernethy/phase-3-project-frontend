@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import TaskForm from "./TaskForm";
 import Task from "./Task";
 
-function TaskList({list, onDeleteList}){
+function TaskList({list, onDeleteList, onUpdateListImportance}){
     const[tasks, setTasks] = useState(list.tasks)
+    const[importantChecked, setImportantChecked]=useState(false)
 
     function handleNewTask(newTask){
        setTasks([...tasks, newTask])
@@ -22,7 +23,18 @@ function TaskList({list, onDeleteList}){
     }
 
     function handleChangeOfImportance(){
-        console.log("importance changed")
+    fetch(`http://localhost:9292/task-lists/importance/${list.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        important: !list.important,
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((updatedList) => onUpdateListImportance(updatedList));
+        setImportantChecked((importantChecked)=> !importantChecked)
     }
 
     function handleChangeOfUrgency(){
@@ -38,7 +50,11 @@ function TaskList({list, onDeleteList}){
             <h2>{list.name}</h2>
             <label>
                 Important
-                <input type="checkbox"></input>
+                <input 
+                type="checkbox" 
+                checked={importantChecked}
+                onChange={handleChangeOfImportance}>
+                </input>
             </label>
             <label>
                 Urgent
