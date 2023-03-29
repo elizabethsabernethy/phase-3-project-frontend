@@ -4,7 +4,8 @@ import Task from "./Task";
 
 function TaskList({list, onDeleteList, onUpdateListImportance}){
     const[tasks, setTasks] = useState(list.tasks)
-    const[importantChecked, setImportantChecked]=useState(false)
+    const[importantChecked, setImportantChecked]= useState(false)
+    const[urgentChecked, setUrgentChecked]= useState(false)    
 
     function handleNewTask(newTask){
        setTasks([...tasks, newTask])
@@ -38,7 +39,18 @@ function TaskList({list, onDeleteList, onUpdateListImportance}){
     }
 
     function handleChangeOfUrgency(){
-        console.log("urgency changed")
+    fetch(`http://localhost:9292/task-lists/urgency/${list.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        urgent: !list.urgent,
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((updatedList) => onUpdateListUrgency(updatedList));
+        setUrgentChecked((urgentChecked)=> !urgentChecked)
     }
 
     function handleCompleted(){
@@ -58,7 +70,11 @@ function TaskList({list, onDeleteList, onUpdateListImportance}){
             </label>
             <label>
                 Urgent
-                <input type="checkbox"></input>
+                <input 
+                type="checkbox"
+                checked={urgentChecked}
+                onChange={handleChangeOfUrgency}>
+                </input>
             </label>
             <button onClick={handleDelete}>🗑️</button>
             <button onClick={handleEdit}>✏️</button>
