@@ -21,6 +21,18 @@ function TaskList({list, onDeleteList}){
         console.log("edited")
     }
 
+    function handleChangeOfImportance(){
+        console.log("importance changed")
+    }
+
+    function handleChangeOfUrgency(){
+        console.log("urgency changed")
+    }
+
+    function handleCompleted(){
+        console.log("task-list complete, yay")
+    }
+
     return(
         <div className="task_list">
             <h2>{list.name}</h2>
