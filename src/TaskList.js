@@ -3,9 +3,10 @@ import TaskForm from "./TaskForm";
 import Task from "./Task";
 
 function TaskList({list}){
+    const[tasks, setTasks] = useState(list.tasks)
 
     function handleNewTask(newTask){
-        console.log(newTask)
+       setTasks([...tasks, newTask])
     }
 
     function handleDelete(){
@@ -22,7 +23,7 @@ function TaskList({list}){
             <button onClick={handleDelete}>🗑️</button>
             <button onClick={handleEdit}>✏️</button>
             <TaskForm onAddNewTask={handleNewTask} list_id={list.id}/>
-            {typeof list.tasks !== "undefined" ? list.tasks.map((task)=>{
+            {typeof tasks !== "undefined" ? tasks.map((task)=>{
                 return <Task task={task} key={task.id}/>
             }): null} 
         </div>
