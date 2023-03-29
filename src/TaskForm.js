@@ -5,9 +5,26 @@ function TaskForm({onAddNewTask}){
     const[taskName, setTaskName]=useState("")
 
     function handleSubmit(e) {
-        e.preventDefault();
-        onAddNewTask(taskName)
-        setTaskName('')
+      e.preventDefault();
+      // fetch("http://localhost:9292/tasks", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     name: taskName,
+      //     important: false,
+      //     urgent: false,
+      //     complete: false,
+      //     task_list_id: task_list_id <------- how do i get the correct id?
+      //   }
+      //   ),
+      // })
+      //   .then((resp) => resp.json())
+      //   .then((newTask) => {
+      //     onAddNewTask(newTask);
+      //     setTaskName("");
+      //   });
     }
 
     function handleChange(e){
