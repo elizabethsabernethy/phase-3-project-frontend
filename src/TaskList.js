@@ -54,6 +54,28 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
         setTasks(updatedTasks);
     }
 
+    function handleTaskImportanceChange(updatedTask){
+        const updatedTasks = tasks.map((task) => {
+            if (task.id === updatedTask.id) {
+              return updatedTask;
+            } else {
+              return task;
+            }
+          });
+          setTasks(updatedTasks)
+    }
+
+    function handleTaskUrgencyChange(updatedTask){
+        const updatedTasks = tasks.map((task) => {
+            if (task.id === updatedTask.id) {
+              return updatedTask;
+            } else {
+              return task;
+            }
+          });
+          setTasks(updatedTasks)
+    }
+
     return(
         <div className="task_list">
             <h2>{list.name}</h2>
@@ -77,7 +99,11 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
             <button onClick={handleEdit}>✏️</button>
             <TaskForm onAddNewTask={handleNewTask} list_id={list.id}/>
             {typeof tasks !== "undefined" ? tasks.map((task)=>{
-                return <Task task={task} onDeleteTask={handleDeleteTask} key={task.id}/>
+                return <Task task={task} 
+                onDeleteTask={handleDeleteTask} 
+                onUpdateTaskImportance={handleTaskImportanceChange}
+                onUpdateTaskUrgency={handleTaskUrgencyChange}
+                key={task.id}/>
             }): null} 
         </div>
     )
