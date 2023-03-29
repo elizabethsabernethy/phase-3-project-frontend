@@ -3,9 +3,7 @@ import TaskForm from "./TaskForm";
 import Task from "./Task";
 
 function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgency}){
-    const[tasks, setTasks] = useState(list.tasks)
-    const[importantChecked, setImportantChecked]= useState(false)
-    const[urgentChecked, setUrgentChecked]= useState(false)    
+    const[tasks, setTasks] = useState(list.tasks)    
 
     function handleNewTask(newTask){
        setTasks([...tasks, newTask])
@@ -35,7 +33,6 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
     })
       .then((resp) => resp.json())
       .then((updatedList) => onUpdateListImportance(updatedList));
-        setImportantChecked((importantChecked)=> !importantChecked)
     }
 
     function handleChangeOfUrgency(){
@@ -50,7 +47,6 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
     })
       .then((resp) => resp.json())
       .then((updatedList) => onUpdateListUrgency(updatedList));
-        setUrgentChecked((urgentChecked)=> !urgentChecked)
     }
 
     function handleCompleted(){
@@ -64,7 +60,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
                 Important
                 <input 
                 type="checkbox" 
-                checked={importantChecked}
+                checked={list.important}
                 onChange={handleChangeOfImportance}>
                 </input>
             </label>
@@ -72,7 +68,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
                 Urgent
                 <input 
                 type="checkbox"
-                checked={urgentChecked}
+                checked={list.urgent}
                 onChange={handleChangeOfUrgency}>
                 </input>
             </label>
