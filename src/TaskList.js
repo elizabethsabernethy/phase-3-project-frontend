@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TaskForm from "./TaskForm";
 import Task from "./Task";
-import EditListName from "./EditListName";
+import EditListName from "./EditName";
 
 function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgency}){
     const[tasks, setTasks] = useState(list.tasks) 
