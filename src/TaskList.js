@@ -74,8 +74,9 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
     }
 
     return(
-        <div className="task_list">
-          {!editing ? <h2>{list.name}</h2> : <EditName list={list} onNameChange={handleNameChange}/>}
+        <div className="list-container">
+          <div className="list-title-container">
+            {!editing ? <h2>{list.name}</h2> : <EditName list={list} onNameChange={handleNameChange}/>}
             <label>
                 Important
                 <input 
@@ -94,8 +95,10 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
             </label>
             <button onClick={handleDelete}>🗑️</button>
             <button onClick={()=> setEditing(true)}>✏️</button>
-            <button onClick={handleShowTasks}>{showTasks ? 'Show Tasks' : 'Hide Tasks'}</button>
-            <div hidden={showTasks ? true : false}>
+          </div>
+          <div className="in-list-task-container">
+          <button onClick={handleShowTasks}>{showTasks ? 'Show Tasks' : 'Hide Tasks'}</button>
+            <div className="task-container" hidden={showTasks ? true : false}>
             <TaskForm onAddNewTask={handleNewTask} list_id={list.id}/>
             <ol>
                {typeof tasks !== "undefined" ? tasks.map((task)=>{
@@ -111,7 +114,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
             }): null} 
             </ol>
             </div>
-           
+          </div>
         </div>
     )
 }
