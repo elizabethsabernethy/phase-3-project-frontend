@@ -33,17 +33,13 @@ function TaskForm({onAddNewTask, list_id}){
 
     return(
     <form className="new_task" onSubmit={handleSubmit}>
-      <label>
-        New Task:
         <input
           type="text"
           name="name"
           value={taskName}
           onChange={handleChange}
         />
-      </label>
-
-      <button type="submit">Add Task</button>
+      <button type="submit">➕</button>
     </form>
     )
 }
