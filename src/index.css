@@ -2,3 +2,19 @@ body {
   margin: 0;
   font-family:cursive
 }
+
+.task-container{
+
+}
+
+.in-list-task-container{
+ 
+}
+
+.list-title-container{
+  
+}
+
+.list-container{
+  display:inline-block;
+}
