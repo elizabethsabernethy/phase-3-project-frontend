@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 
-function EditName({list}){
-  const{listName, setListName}=useState(list.name)
+function EditName({list, onNameChange}){
+  const[listName, setListName]=useState('')
 
-    function handleChange(e){
-        setListName(e.target.value)
-    }
-
-    function handleSave(){
+    function handleSave(e){
+      e.preventDefault();
       fetch(`http://localhost:9292/task-lists/name/${list.id}`, {
       method: "PATCH",
       headers: {
@@ -18,11 +15,16 @@ function EditName({list}){
       }),
     })
       .then((resp) => resp.json())
-      .then((updatedName) => console.log(updatedName));
+      .then((updatedList) => onNameChange(updatedList));
+    }
+
+    
+    function handleChange(e){
+      setListName(e.target.value)
     }
 
     return(
-        <form>
+        <form onSubmit={handleSave}>
         <input
           type="text"
           name={list.name}
@@ -30,7 +32,7 @@ function EditName({list}){
           onChange={handleChange}
         />
 
-      <button onClick={handleSave} type="submit">Save</button>
+      <button type="submit">Save</button>
         </form>
     )
 }
