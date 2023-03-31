@@ -1,20 +1,23 @@
 body {
   margin: 0;
-  font-family:cursive
+  font-family:'Times New Roman', Times, serif;
+  background-color: rgb(76, 147, 176);
 }
 
 .task-container{
-
-}
-
-.in-list-task-container{
- 
 }
 
 .list-title-container{
-  
+  text-align: center;
+  background-color: aliceblue;
+  padding: 5px;
 }
 
 .list-container{
-  display:inline-block;
+  display:block;
+  background-color: rgb(255, 255, 255);
+  width: 25%;
+  margin: 15px;
+  padding: 15px;
+  padding-top: 10px;
 }
