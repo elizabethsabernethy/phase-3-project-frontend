@@ -58,7 +58,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
         setTasks(updatedTasks);
     }
 
-    function handleTaskImportanceChange(updatedTask){
+    function handleTaskChanges(updatedTask){
         const updatedTasks = tasks.map((task) => {
             if (task.id === updatedTask.id) {
               return updatedTask;
@@ -67,39 +67,6 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
             }
           });
           setTasks(updatedTasks)
-    }
-
-    function handleTaskUrgencyChange(updatedTask){
-        const updatedTasks = tasks.map((task) => {
-            if (task.id === updatedTask.id) {
-              return updatedTask;
-            } else {
-              return task;
-            }
-          });
-          setTasks(updatedTasks)
-    }
-
-    function handleTaskCompletion(updatedTask){
-        const updatedTasks = tasks.map((task) => {
-            if (task.id === updatedTask.id) {
-              return updatedTask;
-            } else {
-              return task;
-            }
-          });
-          setTasks(updatedTasks)
-    }
-
-    function handleTaskNameChange(updatedTask){
-      const updatedTasks = tasks.map((task) => {
-        if (task.id === updatedTask.id) {
-          return updatedTask;
-        } else {
-          return task;
-        }
-      });
-      setTasks(updatedTasks)
     }
 
     function handleShowTasks(){
@@ -133,10 +100,10 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
                {typeof tasks !== "undefined" ? tasks.map((task)=>{
                 return <Task task={task} 
                 onDeleteTask={handleDeleteTask} 
-                onUpdateTaskImportance={handleTaskImportanceChange}
-                onUpdateTaskUrgency={handleTaskUrgencyChange}
-                onUpdateTaskCompletion={handleTaskCompletion}
-                handleTaskNameChange={handleTaskNameChange}
+                onUpdateTaskImportance={handleTaskChanges}
+                onUpdateTaskUrgency={handleTaskChanges}
+                onUpdateTaskCompletion={handleTaskChanges}
+                handleTaskNameChange={handleTaskChanges}
                 key={task.id}/>
             }): null} 
             </div>
