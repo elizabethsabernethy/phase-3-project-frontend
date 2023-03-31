@@ -6,7 +6,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
     const[tasks, setTasks] = useState(list.tasks)    
 
     function handleNewTask(newTask){
-       setTasks([...tasks, newTask])
+      setTasks([...tasks, newTask]) 
     }
 
     function handleDelete(){
