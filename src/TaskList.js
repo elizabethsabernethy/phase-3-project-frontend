@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TaskForm from "./TaskForm";
 import Task from "./Task";
-import EditListName from "./EditName";
+import EditName from "./EditName";
 
 function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgency}){
     const[tasks, setTasks] = useState(list.tasks) 
@@ -97,7 +97,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
 
     return(
         <div className="task_list">
-          {!editing ? <h2>{list.name}</h2> : <EditListName name={list.name}/>}
+          {!editing ? <h2>{list.name}</h2> : <EditName name={list.name}/>}
             <label>
                 Important
                 <input 
