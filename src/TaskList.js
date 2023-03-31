@@ -3,11 +3,15 @@ import TaskForm from "./TaskForm";
 import Task from "./Task";
 import EditName from "./EditName";
 
-function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgency}){
+function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgency, handleListNameUpdate}){
     const[tasks, setTasks] = useState(list.tasks) 
     const[showTasks, setShowTasks] = useState(false)
-    const[editing, setEditing]=useState(false)  
-    const[listName, setListName]= useState('')
+    const[editing, setEditing]=useState(false) 
+    
+    function handleNameChange(updatedList){
+      handleListNameUpdate(updatedList)
+      setEditing(false)
+    }
 
     function handleNewTask(newTask){
       setTasks([...tasks, newTask]) 
@@ -19,10 +23,6 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
           })
             .then((resp) => resp.json())
             .then(() => onDeleteList(list));
-    }
-
-    function handleEdit(){
-        
     }
 
     function handleChangeOfImportance(){
@@ -97,7 +97,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
 
     return(
         <div className="task_list">
-          {!editing ? <h2>{list.name}</h2> : <EditName list={list}/>}
+          {!editing ? <h2>{list.name}</h2> : <EditName list={list} onNameChange={handleNameChange}/>}
             <label>
                 Important
                 <input 
