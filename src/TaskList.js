@@ -97,8 +97,12 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
             <button onClick={()=> setEditing(true)}>✏️</button>
           </div>
           <div className="in-list-task-container">
-          <TaskForm onAddNewTask={handleNewTask} list_id={list.id}/>
-          <button onClick={handleShowTasks}>{showTasks ? 'Show Tasks' : 'Hide Tasks'}</button>
+            <div className="task-form-div">
+              <TaskForm onAddNewTask={handleNewTask} list_id={list.id}/>
+            </div>
+            <div className="show-button-div">
+              <button onClick={handleShowTasks}>{showTasks ? 'Show Tasks' : 'Hide Tasks'}</button>
+            </div>
           </div>
             <div className="task-container" hidden={showTasks ? true : false}>
             <ol>
