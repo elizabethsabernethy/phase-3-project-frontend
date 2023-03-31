@@ -97,7 +97,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
 
     return(
         <div className="task_list">
-          {!editing ? <h2>{list.name}</h2> : <EditName name={list.name}/>}
+          {!editing ? <h2>{list.name}</h2> : <EditName list={list}/>}
             <label>
                 Important
                 <input 
