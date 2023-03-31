@@ -98,8 +98,9 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
           </div>
           <div className="in-list-task-container">
           <button onClick={handleShowTasks}>{showTasks ? 'Show Tasks' : 'Hide Tasks'}</button>
+          <TaskForm onAddNewTask={handleNewTask} list_id={list.id}/>
+          </div>
             <div className="task-container" hidden={showTasks ? true : false}>
-            <TaskForm onAddNewTask={handleNewTask} list_id={list.id}/>
             <ol>
                {typeof tasks !== "undefined" ? tasks.map((task)=>{
                 return <li key={task.id}>
@@ -113,7 +114,6 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
                   </li>
             }): null} 
             </ol>
-            </div>
           </div>
         </div>
     )
