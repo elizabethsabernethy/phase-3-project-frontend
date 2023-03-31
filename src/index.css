@@ -4,13 +4,23 @@ body {
   background-color: rgb(76, 147, 176);
 }
 
+button{
+  margin: 5px;
+}
+
 .task-container{
+}
+
+.in-list-task-container{
+display: inline-block;
+padding: 10px;
 }
 
 .list-title-container{
   text-align: center;
   background-color: aliceblue;
   padding: 5px;
+  height: 100px;
 }
 
 .list-container{
@@ -20,4 +30,5 @@ body {
   margin: 15px;
   padding: 15px;
   padding-top: 10px;
+  border: 2px solid black;
 }
