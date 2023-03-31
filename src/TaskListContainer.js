@@ -20,29 +20,7 @@ function TaskListContainer(){
         setLists(updatedLists);
       }
 
-    function handleTaskListImportanceChange(updatedList){
-        const updatedLists = lists.map((list) => {
-            if (list.id === updatedList.id) {
-              return updatedList;
-            } else {
-              return list;
-            }
-          });
-          setLists(updatedLists)
-    }
-
-    function handleTaskListUrgencyChange(updatedList){
-        const updatedLists = lists.map((list) => {
-            if (list.id === updatedList.id) {
-              return updatedList;
-            } else {
-              return list;
-            }
-          });
-          setLists(updatedLists)
-    }
-
-    function handleListNameUpdate(updatedList){
+    function handleListChanges(updatedList){
       const updatedLists = lists.map((list) => {
         if (list.id === updatedList.id) {
           return updatedList;
@@ -60,9 +38,9 @@ function TaskListContainer(){
                 {lists.map((list)=>{
                     return <TaskList list={list} 
                     onDeleteList={handleDeleteList} 
-                    onUpdateListImportance={handleTaskListImportanceChange} 
-                    onUpdateListUrgency={handleTaskListUrgencyChange}
-                    handleListNameUpdate={handleListNameUpdate}
+                    onUpdateListImportance={handleListChanges} 
+                    onUpdateListUrgency={handleListChanges}
+                    handleListNameUpdate={handleListChanges}
                     key={list.id}/>
                 })}
             </ul>
