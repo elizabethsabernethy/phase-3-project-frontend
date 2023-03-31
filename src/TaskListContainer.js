@@ -42,6 +42,17 @@ function TaskListContainer(){
           setLists(updatedLists)
     }
 
+    function handleListNameUpdate(updatedList){
+      const updatedLists = lists.map((list) => {
+        if (list.id === updatedList.id) {
+          return updatedList;
+        } else {
+          return list;
+        }
+      });
+      setLists(updatedLists)
+    }
+
     return(
         <div>
             <TaskListForm onAddNewList={handleNewList}/>
@@ -51,6 +62,7 @@ function TaskListContainer(){
                     onDeleteList={handleDeleteList} 
                     onUpdateListImportance={handleTaskListImportanceChange} 
                     onUpdateListUrgency={handleTaskListUrgencyChange}
+                    handleListNameUpdate={handleListNameUpdate}
                     key={list.id}/>
                 })}
             </ul>
