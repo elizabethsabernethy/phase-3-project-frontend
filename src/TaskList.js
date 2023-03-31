@@ -3,7 +3,8 @@ import TaskForm from "./TaskForm";
 import Task from "./Task";
 
 function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgency}){
-    const[tasks, setTasks] = useState(list.tasks)    
+    const[tasks, setTasks] = useState(list.tasks) 
+    const[showTasks, setShowTasks] = useState(false)   
 
     function handleNewTask(newTask){
       setTasks([...tasks, newTask]) 
@@ -87,6 +88,10 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
           setTasks(updatedTasks)
     }
 
+    function handleShowTasks(){
+      setShowTasks((showTasks) => !showTasks)
+    }
+
     return(
         <div className="task_list">
             <h2>{list.name}</h2>
@@ -108,8 +113,10 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
             </label>
             <button onClick={handleDelete}>🗑️</button>
             <button onClick={handleEdit}>✏️</button>
+            <button onClick={handleShowTasks}>{showTasks ? 'Show Tasks' : 'Hide Tasks'}</button>
+            <div hidden={showTasks ? true : false}>
             <TaskForm onAddNewTask={handleNewTask} list_id={list.id}/>
-            {typeof tasks !== "undefined" ? tasks.map((task)=>{
+               {typeof tasks !== "undefined" ? tasks.map((task)=>{
                 return <Task task={task} 
                 onDeleteTask={handleDeleteTask} 
                 onUpdateTaskImportance={handleTaskImportanceChange}
@@ -117,6 +124,8 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
                 onUpdateTaskCompletion={handleTaskCompletion}
                 key={task.id}/>
             }): null} 
+            </div>
+           
         </div>
     )
 }
