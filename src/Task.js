@@ -41,11 +41,6 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, 
           .then((updatedTask) => onUpdateTaskUrgency(updatedTask));
         }
 
-    function handleNameChange(updatedTask){
-        handleTaskNameChange(updatedTask)
-        setEditing(false)
-    }
-
     function handleComplete(){
         fetch(`http://localhost:9292/tasks/complete/${task.id}`, {
           method: "PATCH",
@@ -59,6 +54,11 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, 
           .then((resp) => resp.json())
           .then((updatedTask) => onUpdateTaskCompletion(updatedTask));
     }
+
+    function handleNameChange(updatedTask){
+      handleTaskNameChange(updatedTask)
+      setEditing(false)
+  }
 
     return(
         <div>
