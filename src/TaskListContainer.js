@@ -34,7 +34,6 @@ function TaskListContainer(){
     return(
         <div>
             <TaskListForm onAddNewList={handleNewList}/>
-            <ul className="task_list_list">
                 {lists.map((list)=>{
                     return <TaskList list={list} 
                     onDeleteList={handleDeleteList} 
@@ -43,7 +42,6 @@ function TaskListContainer(){
                     handleListNameUpdate={handleListChanges}
                     key={list.id}/>
                 })}
-            </ul>
         </div>
     )
 }
