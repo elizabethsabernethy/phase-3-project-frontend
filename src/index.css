@@ -15,6 +15,10 @@ button{
 display: inline-block;
 }
 
+.new_task > input{
+width: 150px;
+}
+
 .in-list-task-container{
 display: flex;
 padding: 10px;
