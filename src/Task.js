@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import EditTaskName from "./EditTaskName";
 
-function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, onUpdateTaskCompletion}){
+function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, onUpdateTaskCompletion, handleTaskNameChange}){
   const[editing, setEditing] = useState(false)
 
 
@@ -41,8 +41,9 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, 
           .then((updatedTask) => onUpdateTaskUrgency(updatedTask));
         }
 
-    function handleEdit(){
-        console.log('Edited')
+    function handleNameChange(updatedTask){
+        handleTaskNameChange(updatedTask)
+        setEditing(false)
     }
 
     function handleComplete(){
