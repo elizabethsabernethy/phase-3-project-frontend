@@ -4,7 +4,9 @@ import Task from "./Task";
 
 function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgency}){
     const[tasks, setTasks] = useState(list.tasks) 
-    const[showTasks, setShowTasks] = useState(false)   
+    const[showTasks, setShowTasks] = useState(false)
+    const[editing, setEditing]=useState(false)  
+    const[listName, setListName]= useState('')
 
     function handleNewTask(newTask){
       setTasks([...tasks, newTask]) 
@@ -19,7 +21,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
     }
 
     function handleEdit(){
-        console.log("edited")
+        
     }
 
     function handleChangeOfImportance(){
@@ -94,7 +96,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
 
     return(
         <div className="task_list">
-            <h2>{list.name}</h2>
+          {!editing ? <h2>{list.name}</h2> : <EditListName/>}
             <label>
                 Important
                 <input 
@@ -112,7 +114,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
                 </input>
             </label>
             <button onClick={handleDelete}>🗑️</button>
-            <button onClick={handleEdit}>✏️</button>
+            <button onClick={()=> setEditing(true)}>✏️</button>
             <button onClick={handleShowTasks}>{showTasks ? 'Show Tasks' : 'Hide Tasks'}</button>
             <div hidden={showTasks ? true : false}>
             <TaskForm onAddNewTask={handleNewTask} list_id={list.id}/>
