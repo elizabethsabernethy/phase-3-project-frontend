@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import EditTaskName from "./EditTaskName";
 
 function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, onUpdateTaskCompletion}){
+  const[editing, setEditing] = useState(false)
+
 
     function handleDelete(){
      fetch(`http://localhost:9292/tasks/${task.id}`, {
@@ -58,7 +61,7 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, 
 
     return(
         <div>
-            <h4 style={task.complete ? {textDecorationLine: 'line-through', textDecorationStyle: 'solid'} : null}>{task.name}</h4>
+            {!editing ? <h4 style={task.complete ? {textDecorationLine: 'line-through', textDecorationStyle: 'solid'} : null}>{task.name}</h4> : <EditTaskName task={task} onNameChange={handleNameChange}/>}
             <label>
                 Important
                 <input 
