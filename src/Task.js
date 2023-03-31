@@ -80,7 +80,7 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, 
                 </input>
             </label>
             <button onClick={handleDelete}>🗑️</button>
-            <button onClick={handleEdit}>✏️</button>
+            <button onClick={()=> setEditing(true)}>✏️</button>
             <button onClick={handleComplete}>✅</button>
         </div>
     )
