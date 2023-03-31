@@ -11,8 +11,12 @@ button{
 .task-container{
 }
 
-.in-list-task-container{
+.task-form-div, .show-button-div{
 display: inline-block;
+}
+
+.in-list-task-container{
+display: flex;
 padding: 10px;
 }
 
