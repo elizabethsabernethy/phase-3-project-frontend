@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function EditTaskName({task, onNameChange}){
-  const[taskName, setTaskName]=useState('')
+  const[taskName, setTaskName]=useState(task.name)
 
     function handleSave(e){
       e.preventDefault();
