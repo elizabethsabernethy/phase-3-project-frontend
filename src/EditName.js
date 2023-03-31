@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function EditName({list, onNameChange}){
-  const[listName, setListName]=useState('')
+  const[listName, setListName]=useState(list.name)
 
     function handleSave(e){
       e.preventDefault();
