@@ -80,8 +80,8 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
                {!editing ? <h2>{list.name}</h2> : <EditName list={list} onNameChange={handleNameChange}/>}
             </div>
             <div className="list-button-container">
-              <button onClick={()=> setEditing(true)}><span>✏️</span></button>
-              <button onClick={handleDelete}><span>🗑️</span></button>
+              <button onClick={()=> setEditing(true)}>✏️</button>
+              <button onClick={handleDelete}>🗑️</button>
             </div>
             <div className="list-checkbox-container">
               <label>
