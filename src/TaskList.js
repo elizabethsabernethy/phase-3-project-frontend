@@ -76,7 +76,9 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
     return(
         <div className="list-container">
           <div className="list-title-container">
-            {!editing ? <h2>{list.name}</h2> : <EditName list={list} onNameChange={handleNameChange}/>}
+            <div className="list-name-display">
+               {!editing ? <h2>{list.name}</h2> : <EditName list={list} onNameChange={handleNameChange}/>}
+            </div>
             <div className="list-button-container">
               <button onClick={()=> setEditing(true)}>✏️</button>
               <button onClick={handleDelete}>🗑️</button>
