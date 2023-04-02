@@ -77,9 +77,12 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
         <div className="list-container">
           <div className="list-title-container">
             {!editing ? <h2>{list.name}</h2> : <EditName list={list} onNameChange={handleNameChange}/>}
-            <button onClick={()=> setEditing(true)}>✏️</button>
-            <button onClick={handleDelete}>🗑️</button>
-            <label>
+            <div className="list-button-container">
+              <button onClick={()=> setEditing(true)}>✏️</button>
+              <button onClick={handleDelete}>🗑️</button>
+            </div>
+            <div className="list-checkbox-container">
+              <label>
                 Important
                 <input 
                 type="checkbox" 
@@ -95,6 +98,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
                 onChange={handleChangeOfUrgency}>
                 </input>
             </label>
+            </div>
           </div>
           <div className="in-list-task-container">
             <div className="task-form-div">
