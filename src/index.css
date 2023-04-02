@@ -40,6 +40,10 @@ padding: 10px;
   height: 100px;
 }
 
+.list-button-container, .list-name-display{
+  display: inline-block;
+}
+
 .list-container{
   display:block;
   background-color: rgb(255, 255, 255);
