@@ -1,9 +1,9 @@
 import React from "react";
 
-function FilterTaskLists(){
+function FilterTaskLists({filterLists}){
 
     function handleSearchTasks(e){
-        console.log(e.target.value)
+        filterLists(e.target.value)
     }
 
     return(
