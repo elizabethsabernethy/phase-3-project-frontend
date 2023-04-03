@@ -111,19 +111,16 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
             </div>
           </div>
             <div className="task-container" hidden={showTasks ? true : false}>
-            <ol>
                {typeof tasks !== "undefined" ? tasks.map((task)=>{
-                return <li key={task.id}>
-                  <Task task={task} 
+                return <Task task={task} 
                 onDeleteTask={handleDeleteTask} 
                 onUpdateTaskImportance={handleTaskChanges}
                 onUpdateTaskUrgency={handleTaskChanges}
                 onUpdateTaskCompletion={handleTaskChanges}
                 handleTaskNameChange={handleTaskChanges}
+                key={task.id}
                 />
-                  </li>
             }): null} 
-            </ol>
           </div>
         </div>
     )
