@@ -11,6 +11,7 @@ button{
 
 h1{
   font-size: 50px;
+  margin: 10px;
 }
 
 .task-form-div, .show-button-div{
@@ -125,4 +126,9 @@ form > button{
 .task-buttons{
   position: relative;
   left: 18px;
+}
+
+.NewList > label{
+  font-size: large;
+  text-decoration: underline;
 }
