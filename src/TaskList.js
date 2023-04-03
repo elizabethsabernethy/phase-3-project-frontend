@@ -85,7 +85,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
             </div>
             <div className="list-checkbox-container">
               <label>
-                Important
+                IMPORTANT
                 <input 
                 type="checkbox" 
                 checked={list.important}
@@ -93,7 +93,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
                 </input>
             </label>
             <label>
-                Urgent
+                URGENT
                 <input 
                 type="checkbox"
                 checked={list.urgent}
