@@ -15,6 +15,18 @@ function FilterTaskLists({filterLists}){
             placeholder="Type a list name to search..."
             onChange={handleSearchTasks}
             />
+            <label>
+                Filter: Important
+                <input 
+                type="checkbox">
+                </input>
+            </label>
+            <label>
+                Filter: Urgent
+                <input 
+                type="checkbox">
+                </input>
+            </label>
       </div>
     )
 }
