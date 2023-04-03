@@ -54,6 +54,8 @@ padding: 10px;
 
 .list-checkbox-container{
   margin: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(76, 147, 176);
 }
 
 .list-container{
@@ -91,11 +93,16 @@ margin: 10px;
 .task-checkboxes{
   font-size: 12px;
   color:rgb(76, 147, 176);
-  font-weight: 600;
-  text-decoration: underline;
+  font-weight: 200;
+  margin-right: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.task-checkboxes > label{
+  margin-right: 10px;
 }
 
 .task-buttons{
   position: relative;
-  left: 25px;
+  left: 18px;
 }
