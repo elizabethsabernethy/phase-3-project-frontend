@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TaskListForm from "./TaskListForm";
 import TaskList from "./TaskList";
+import FilterTaskLists from "./FilterTaskLists";
 
 function TaskListContainer(){
     const[lists, setLists]=useState([])
@@ -34,6 +35,7 @@ function TaskListContainer(){
     return(
         <div className="task-lists-container">
             <TaskListForm onAddNewList={handleNewList}/>
+            <FilterTaskLists/>
                 {lists.map((list)=>{
                     return <TaskList list={list} 
                     onDeleteList={handleDeleteList} 
