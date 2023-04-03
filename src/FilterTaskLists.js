@@ -12,7 +12,7 @@ function FilterTaskLists(){
             <input
             type="text"
             id="search"
-            placeholder="Type a Task-List name to search..."
+            placeholder="Type a list name to search..."
             onChange={handleSearchTasks}
             />
       </div>
