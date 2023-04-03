@@ -34,8 +34,12 @@ function TaskListContainer(){
 
     return(
         <div className="task-lists-container">
+          <div className="task-list-form-div">
             <TaskListForm onAddNewList={handleNewList}/>
+          </div>
+          <div className="filter-task-lists-div">
             <FilterTaskLists/>
+          </div>
                 {lists.map((list)=>{
                     return <TaskList list={list} 
                     onDeleteList={handleDeleteList} 
