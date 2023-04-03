@@ -5,6 +5,7 @@ import FilterTaskLists from "./FilterTaskLists";
 
 function TaskListContainer(){
     const[lists, setLists]=useState([])
+    const[filteredList, setFilteredList] = useState('')
 
     useEffect(()=>{
         fetch('http://localhost:9292/task-lists')
@@ -32,15 +33,24 @@ function TaskListContainer(){
       setLists(updatedLists)
     }
 
+    function filterLists(input){
+      setFilteredList(input)
+    }
+    
+    const listsToShow = lists.filter((list)=>{
+      return ((list.name).toLowerCase()).match(filteredList.toLowerCase());
+    })
+
     return(
         <div className="task-lists-container">
           <div className="task-list-form-div">
             <TaskListForm onAddNewList={handleNewList}/>
           </div>
           <div className="filter-task-lists-div">
-            <FilterTaskLists/>
+            <FilterTaskLists filterLists={filterLists}/>
           </div>
-                {lists.map((list)=>{
+          <div>
+            {listsToShow.map((list)=>{
                     return <TaskList list={list} 
                     onDeleteList={handleDeleteList} 
                     onUpdateListImportance={handleListChanges} 
@@ -48,6 +58,7 @@ function TaskListContainer(){
                     handleListNameUpdate={handleListChanges}
                     key={list.id}/>
                 })}
+          </div>
         </div>
     )
 }
