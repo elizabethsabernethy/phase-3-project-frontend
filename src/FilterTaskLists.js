@@ -6,6 +6,14 @@ function FilterTaskLists({filterLists}){
         filterLists(e.target.value)
     }
 
+    function handleFilterImportant(){
+
+    }
+
+    function handleFilterUrgent(){
+
+    }
+
     return(
         <div className="searchbar">
             <label htmlFor="search">Search Task-Lists:</label>
@@ -19,12 +27,14 @@ function FilterTaskLists({filterLists}){
                 Filter: Important
                 <input 
                 type="checkbox">
+                onChange={handleFilterImportant}
                 </input>
             </label>
             <label>
                 Filter: Urgent
                 <input 
                 type="checkbox">
+                onChange={handleFilterUrgent}
                 </input>
             </label>
       </div>
