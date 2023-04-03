@@ -44,6 +44,13 @@ padding: 10px;
   display: inline-block;
 }
 
+.list-button-container > button{
+  background-color: aliceblue;
+  border: 0px;
+  padding: 0px;
+  margin-right: 1px;
+}
+
 .list-container{
   display:block;
   background-color: rgb(255, 255, 255);

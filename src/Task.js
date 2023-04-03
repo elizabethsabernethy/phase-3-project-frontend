@@ -61,27 +61,33 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, 
   }
 
     return(
-        <div>
+        <div className="task">
+          <div className="task-name">
             {!editing ? <h4 style={task.complete ? {textDecorationLine: 'line-through', textDecorationStyle: 'solid'} : null}>{task.name}</h4> : <EditTaskName task={task} onNameChange={handleNameChange}/>}
-            <label>
-                Important
-                <input 
-                type="checkbox" 
-                checked={task.important}
-                onChange={handleChangeOfImportance}>
-                </input>
-            </label>
-            <label>
-                Urgent
-                <input 
-                type="checkbox"
-                checked={task.urgent}
-                onChange={handleChangeOfUrgency}>
-                </input>
-            </label>
-            <button onClick={handleDelete}>🗑️</button>
-            <button onClick={()=> setEditing(true)}>✏️</button>
-            <button onClick={handleComplete}>✅</button>
+          </div>
+            <div className="task-buttons">
+              <button onClick={()=> setEditing(true)}>✏️</button>
+              <button onClick={handleComplete}>✅</button>
+              <button onClick={handleDelete}>🗑️</button>
+            </div>
+            <div className="task-checkboxes">
+              <label>
+                  Important
+                  <input 
+                  type="checkbox" 
+                  checked={task.important}
+                  onChange={handleChangeOfImportance}>
+                  </input>
+              </label>
+              <label>
+                  Urgent
+                  <input 
+                  type="checkbox"
+                  checked={task.urgent}
+                  onChange={handleChangeOfUrgency}>
+                  </input>
+              </label>
+            </div>      
         </div>
     )
 }
