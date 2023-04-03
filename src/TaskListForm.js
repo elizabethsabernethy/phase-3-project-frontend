@@ -39,6 +39,7 @@ function TaskListForm({onAddNewList}){
           name="name"
           value={listName}
           onChange={handleChange}
+          required
         />
       </label>
 
