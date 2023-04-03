@@ -56,6 +56,11 @@ padding: 10px;
   margin: 5px;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(76, 147, 176);
+  font-size: small;
+}
+
+.list-checkbox-container > label{
+  margin-right: 10px;
 }
 
 .list-container{
@@ -76,6 +81,11 @@ padding: 10px;
 .task-name > h4{
 width: 285px;
 margin: 10px;
+}
+
+.task-name > form {
+  position: relative;
+  left: 45px;
 }
 
 .task-buttons > button{
