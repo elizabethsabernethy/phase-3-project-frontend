@@ -61,14 +61,14 @@ padding: 10px;
   border: 2px solid black;
 }
 
-.task-name, .task-buttons{
+.task-name, .task-buttons, .task-checkboxes{
   display: inline-block;
   text-align: center;
 }
 
 .task-name > h4{
-width: 160px;
-margin-right: 10px;
+width: 180px;
+margin: 10px;
 }
 
 .task-buttons > button{
@@ -79,4 +79,6 @@ margin-right: 10px;
 
 .task{
   background-color: aliceblue;
+  margin-bottom: 15px;
+  padding: 15px;
 }
