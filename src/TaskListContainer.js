@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import TaskListForm from "./TaskListForm";
 import TaskList from "./TaskList";
 import FilterTaskLists from "./FilterTaskLists";
+import SortTaskLists from "./SortTaskLists";
 
 function TaskListContainer(){
     const[lists, setLists]=useState([])
@@ -48,6 +49,9 @@ function TaskListContainer(){
           </div>
           <div className="filter-task-lists-div">
             <FilterTaskLists filterLists={filterLists}/>
+          </div>
+          <div className="sort-task-lists-div">
+            <SortTaskLists/>
           </div>
           <div>
             {listsToShow.map((list)=>{
