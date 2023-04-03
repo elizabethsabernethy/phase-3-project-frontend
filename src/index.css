@@ -9,6 +9,10 @@ button{
   margin: 5px;
 }
 
+h1{
+  font-size: 50px;
+}
+
 .task-form-div, .show-button-div{
 display: inline-block;
 }
@@ -17,9 +21,10 @@ display: inline-block;
   width: 80px;
   height: 25px;
   font-family: 'Times New Roman', Times, serif;
-  background-color: aliceblue;
+  background-color: rgb(76, 147, 176);;
   border: 0px;
   border-radius: 2px;
+  font-size: medium;
 }
 
 .new_task > input{
@@ -85,9 +90,12 @@ width: 285px;
 margin: 10px;
 }
 
-.task-name > form {
-  position: relative;
-  left: 45px;
+form > button{
+  background-color: aliceblue;
+  border: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+  border-radius: 2px;
 }
 
 .task-buttons > button{
