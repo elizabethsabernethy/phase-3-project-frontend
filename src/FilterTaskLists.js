@@ -1,10 +1,21 @@
 import React from "react";
 
 function FilterTaskLists(){
-    return(
-        <div>
 
-        </div>
+    function handleSearchTasks(e){
+        console.log(e.target.value)
+    }
+
+    return(
+        <div className="searchbar">
+            <label htmlFor="search">Search Task-Lists:</label>
+            <input
+            type="text"
+            id="search"
+            placeholder="Type a Task-List name to search..."
+            onChange={handleSearchTasks}
+            />
+      </div>
     )
 }
 
