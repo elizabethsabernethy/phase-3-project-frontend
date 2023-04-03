@@ -38,6 +38,7 @@ function TaskForm({onAddNewTask, list_id}){
           name="name"
           value={taskName}
           onChange={handleChange}
+          required
         />
       <button type="submit">➕</button>
     </form>
