@@ -135,6 +135,6 @@ form > button{
   text-decoration: underline;
 }
 
-.task-list-form-div, .filter-task-lists-div{
+.task-list-form-div, .filter-task-lists-div, .sort-task-lists-div{
   display: inline-block;
 }
