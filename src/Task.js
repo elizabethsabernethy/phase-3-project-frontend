@@ -69,8 +69,7 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, 
               <button onClick={()=> setEditing(true)}>✏️</button>
               <button onClick={handleComplete}>✅</button>
               <button onClick={handleDelete}>🗑️</button>
-            </div>
-            <div className="task-checkboxes">
+              <div className="task-checkboxes">
               <label>
                 ⚠️
                   <input 
@@ -87,7 +86,8 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, 
                   onChange={handleChangeOfUrgency}>
                   </input>
               </label>
-            </div>      
+            </div> 
+            </div>     
         </div>
     )
 }
