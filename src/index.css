@@ -71,14 +71,16 @@ padding: 10px;
 }
 
 .list-container{
-  display:inline-block;
+  display: inline-block;
+  float: left;
+  position: relative;
+  left:60px;
   background-color: rgb(255, 255, 255);
   width: 25%;
   margin: 15px;
   padding: 15px;
   padding-top: 10px;
   border: 2px solid black;
-  position: relative;
 }
 
 .task-name, .task-buttons, .task-checkboxes{
@@ -131,4 +133,8 @@ form > button{
 .NewList > label{
   font-size: large;
   text-decoration: underline;
+}
+
+.task-lists-container{
+  
 }
