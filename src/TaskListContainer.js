@@ -36,6 +36,10 @@ function TaskListContainer(){
     function filterLists(input){
       setFilteredList(input)
     }
+
+    function handleImportantFilter(important){
+      console.log(important)
+    }
     
     const listsToShow = lists.filter((list)=>{
       return ((list.name).toLowerCase()).match(filteredList.toLowerCase());
@@ -47,7 +51,7 @@ function TaskListContainer(){
             <TaskListForm onAddNewList={handleNewList}/>
           </div>
           <div className="filter-task-lists-div">
-            <FilterTaskLists filterLists={filterLists}/>
+            <FilterTaskLists filterLists={filterLists} getImportant={handleImportantFilter}/>
           </div>
           <div>
             {listsToShow.map((list)=>{
