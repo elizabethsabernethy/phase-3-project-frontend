@@ -1,6 +1,6 @@
 import React from "react";
 
-function SortTasks(){
+function FilterTasks(){
     return(
         <div>
 
@@ -8,4 +8,4 @@ function SortTasks(){
     )
 }
 
-export default SortTasks;
+export default FilterTasks;
