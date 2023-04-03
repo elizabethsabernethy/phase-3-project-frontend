@@ -72,7 +72,7 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, 
             </div>
             <div className="task-checkboxes">
               <label>
-                  Important
+                ⚠️
                   <input 
                   type="checkbox" 
                   checked={task.important}
@@ -80,7 +80,7 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, 
                   </input>
               </label>
               <label>
-                  Urgent
+                ⏰
                   <input 
                   type="checkbox"
                   checked={task.urgent}
