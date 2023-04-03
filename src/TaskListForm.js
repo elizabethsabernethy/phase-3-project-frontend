@@ -31,18 +31,15 @@ function TaskListForm({onAddNewList}){
     }
 
     return(
-    <form className="NewList" onSubmit={handleSubmit}>
-      <label>
-        New List:
+    <form className="NewList" onSubmit={handleSubmit}>      
         <input
           type="text"
           name="name"
           value={listName}
           onChange={handleChange}
+          placeholder="Add a Task List"
           required
         />
-      </label>
-
       <button type="submit">Add List</button>
     </form>
     )
