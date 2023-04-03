@@ -8,9 +8,6 @@ button{
   margin: 5px;
 }
 
-.task-container{
-}
-
 .task-form-div, .show-button-div{
 display: inline-block;
 }
@@ -37,11 +34,15 @@ padding: 10px;
   text-align: center;
   background-color: aliceblue;
   padding: 5px;
-  height: 100px;
+  min-height: 100px;
 }
 
 .list-button-container, .list-name-display{
   display: inline-block;
+}
+
+.list-name-display{
+  max-width: 250px;
 }
 
 .list-button-container > button{
@@ -49,6 +50,10 @@ padding: 10px;
   border: 0px;
   padding: 0px;
   margin-right: 1px;
+}
+
+.list-checkbox-container{
+  margin: 5px;
 }
 
 .list-container{
@@ -67,7 +72,7 @@ padding: 10px;
 }
 
 .task-name > h4{
-width: 180px;
+width: 285px;
 margin: 10px;
 }
 
@@ -80,5 +85,5 @@ margin: 10px;
 .task{
   background-color: aliceblue;
   margin-bottom: 15px;
-  padding: 15px;
+  padding: 5px;
 }
