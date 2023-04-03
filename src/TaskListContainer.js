@@ -32,7 +32,7 @@ function TaskListContainer(){
     }
 
     return(
-        <div>
+        <div className="task-lists-container">
             <TaskListForm onAddNewList={handleNewList}/>
                 {lists.map((list)=>{
                     return <TaskList list={list} 
