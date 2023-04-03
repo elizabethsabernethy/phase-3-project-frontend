@@ -87,3 +87,15 @@ margin: 10px;
   margin-bottom: 15px;
   padding: 5px;
 }
+
+.task-checkboxes{
+  font-size: 12px;
+  color:rgb(76, 147, 176);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.task-buttons{
+  position: relative;
+  left: 25px;
+}
