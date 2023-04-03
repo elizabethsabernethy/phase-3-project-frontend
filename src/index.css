@@ -65,13 +65,14 @@ padding: 10px;
 }
 
 .list-container{
-  display:block;
+  display:inline-block;
   background-color: rgb(255, 255, 255);
   width: 25%;
   margin: 15px;
   padding: 15px;
   padding-top: 10px;
   border: 2px solid black;
+  position: relative;
 }
 
 .task-name, .task-buttons, .task-checkboxes{
