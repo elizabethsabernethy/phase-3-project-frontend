@@ -60,3 +60,23 @@ padding: 10px;
   padding-top: 10px;
   border: 2px solid black;
 }
+
+.task-name, .task-buttons{
+  display: inline-block;
+  text-align: center;
+}
+
+.task-name > h4{
+width: 160px;
+margin-right: 10px;
+}
+
+.task-buttons > button{
+  background-color: aliceblue;
+  border: 0;
+  padding:0;
+}
+
+.task{
+  background-color: aliceblue;
+}
