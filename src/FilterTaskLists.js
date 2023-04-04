@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function FilterTaskLists({filterLists, sendImportantState}){
+function FilterTaskLists({filterLists}){
     const[importantChecked, setImportantChecked] = useState(false)
     const[urgentChecked, setUrgentChecked] = useState(false)
 
@@ -10,7 +10,6 @@ function FilterTaskLists({filterLists, sendImportantState}){
 
     function handleFilterImportant(){
         setImportantChecked((importantChecked)=>!importantChecked)
-        sendImportantState(importantChecked)
 // Set important => !important
 //filter through list.important and reutrn said lists
 //if !importantChecked then show all lists, but if it is checked then show only list.important = true
