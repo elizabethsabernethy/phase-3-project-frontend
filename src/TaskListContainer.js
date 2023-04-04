@@ -36,8 +36,16 @@ function TaskListContainer(){
     function filterLists(input){
       setFilteredList(input)
     }
+
+    const sortedImportantLists = lists.sort((a,b)=>{
+      return b.important - a.important
+    })
+
+    const sortedLists = sortedImportantLists.sort((a,b)=>{
+      return b.urgent - a.urgent
+    })
     
-    const listsToShow = lists.filter((list)=>{
+    const listsToShow = sortedLists.filter((list)=>{
       return ((list.name).toLowerCase()).match(filteredList.toLowerCase());
     })
 
