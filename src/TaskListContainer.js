@@ -47,9 +47,7 @@ function TaskListContainer(){
             <TaskListForm onAddNewList={handleNewList}/>
           </div>
           <div className="filter-task-lists-div">
-            <FilterTaskLists 
-            filterLists={filterLists}
-            lists={lists}/>
+            <FilterTaskLists filterLists={filterLists}/>
           </div>
           <div>
             {listsToShow.map((list)=>{
