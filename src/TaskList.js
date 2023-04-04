@@ -77,13 +77,17 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
       return b.important - a.important
     })
 
-    const sortedTasks = sortedImportantTasks.sort((a,b)=>{
+    const sortedUrgentTasks = sortedImportantTasks.sort((a,b)=>{
       return b.urgent - a.urgent
     })
 
+    const sortedTasks = sortedUrgentTasks.sort((a,b)=>{
+      return a.complete - b.complete
+    })
+
     return(
-        <div className="list-container" style={list.urgent ? {borderColor:'red'} : null}>
-          <div className="list-title-container" style={list.important ? {color:'red'} : null}>
+        <div className="list-container" style={list.urgent && !list.complete ? {borderColor:'red'} : null}>
+          <div className="list-title-container" style={list.important && !list.complete ? {color:'red'} : null}>
             <div className="list-name-display">
                {!editing ? <h2>{list.name}</h2> : <EditName list={list} onNameChange={handleNameChange}/>}
             </div>
