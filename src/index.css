@@ -34,13 +34,14 @@ width: 150px;
 
 .in-list-task-container{
 padding: 10px;
+height: 35px;
 }
 
 .list-title-container{
   text-align: center;
   background-color: aliceblue;
   padding: 5px;
-  min-height: 100px;
+  height: 100px;
 }
 
 .list-button-container, .list-name-display{
@@ -70,10 +71,7 @@ padding: 10px;
 }
 
 .list-container{
-  display: inline-block;
-  vertical-align: top;
   background-color: rgb(255, 255, 255);
-  width: 25%;
   margin: 15px;
   padding: 15px;
   padding-top: 10px;
@@ -122,11 +120,6 @@ form > button{
   margin-right: 10px;
 }
 
-.task-buttons{
-  position: relative;
-  left: 18px;
-}
-
 .NewList > label{
   font-size: large;
   text-decoration: underline;
@@ -134,4 +127,9 @@ form > button{
 
 .task-list-form-div, .filter-task-lists-div, .sort-task-lists-div{
   display: inline-block;
+}
+
+#task-list-parent-container{
+  display: grid;
+  grid-template-columns: 5fr 5fr 5fr;
 }
