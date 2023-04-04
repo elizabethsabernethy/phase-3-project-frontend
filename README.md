@@ -1,57 +1,34 @@
-# Phase 2 Final Project: The (Little) Library
+# Phase 3 Final Project: Task Manager
 
-This project utilized create-react-app to structure a basic react website, from which I adjusted to meet the specific paramters for the app I wanted to create. There is a self-contained JSON database to retrive and add data, as well as CSS to implement the styling. Function based components and react routing are the primary features of react which this app uses to create functionality. 
+This project utilized create-react-app to structure a basic react website, from which I adjusted to meet the specific paramters for the app I wanted to create. I also forked and cloned a backend Ruby repository from the Flatiron school (https://github.com/learn-co-curriculum/phase-3-sinatra-react-project) and added the required migrations and request routes in the application controller to allow an easy connection between the frontend and backend. Function based components are the primary features of react which this app uses to create functionality. The backend utilizes Sinatra and Active Record to create optimal functionality.  
 
 ## Purpose of Project
 
-The purpose of this website is to display books in a way that the user is able to view general information about the book, like/ dislike books, as well as add and remove books from the general collection and the my books page (noted as checking out or returning a book). The site also allows for users to add a book to the collection via a form.
+The purpose of this website is to act as a task manager. Essentially, users can add task-lists and add tasks to a specific task-list. Both task-lists and tasks have a name, and button to edit the name, a checkbox to toggle importance, a checkbox to toggle urgency, and a delete button. Tasks also additonally have a complete button. The website has an add task-list form, and a search bar to search for task-lists based on name. Individual task-lists each have an add task form, and a button to hide/show all tasks. 
 
-![homepage](https://i.imgur.com/coCjhEj.png)
+When a user first enters the website, they will see the Task Manager homepage, which should display the header "Task Manager", then task-list form to add lists, and the search bar. 
 
-When a user first enters the website, they will see the library homepage, which offers basic information about what the interactivity users can expect from the app. On every page, there is a navigation bar at the top, allowing the user to move between four pages, each with its own specific function.
+![search gif](https://imgur.com/NOrsr5E.gif)
 
-![collection page](https://imgur.com/6qk7zis.png)
+The website may or may not have preloaded lists depending on whether a user has previosuly added a list. 
 
-The second page a user would likely visit is the one titled Collection. As mentioned with the homepage, the collection page has a navigation bar at the very top. Below this are two text sections informing the user about specific attributes for the collection page. The first piece of text dynamically shows how many books are available in the collection at the moment. The second piece of text notes the functionality of the page, i.e. being how a user can check out or like/dislike a book. 
+![task-list gif](https://imgur.com/Td1d58b.gif)
 
-![filter gif](https://imgur.com/yp6dQot.gif)
+Task-lists are broken down into 3 main sections, the title section, the add task section, and the tasks section. The title section displays the name of the task-list, an edit button for the name of the list, a delete button, which deletes the list and all contained tasks, and two checkboxes to denote importance and/or urgency. 
+The next section has a form which adds tasks to the list, and a button to hide tasks, or show them if they've been previously hidden. 
 
-There is also a filter and sort dropdown where the user can search for a book in the collection based on the title, and the sort organizes the books alphabetically (or opposite), and by year (oldest, or newest). Additionally, this page shows a list of books as if they are displayed on a shelf. 
+![add task gif](https://imgur.com/v6pgdEq.gif)
 
-![like gif](https://imgur.com/856LKdI.gif)
+The last section houses all of the tasks for that particular task-list. 
 
-Below each book is a heart button, to denote whether the user has liked the book, as evidenced by the change in opacity of the button. 
+Each task, as mentioned previously, has a similar structure and functionality to task-lists. A task has a name, an edit name button, a delete button, and two checkboxes to denote importance/urgency. It also has the addition of a button to mark a task as complete. 
 
-![hover gif](https://imgur.com/tP0EqW7.gif)
+Both tasks, and task-list are added to the page in ascending order of creation, with the newest task or list appearing at the bottom. However, through the use of the important/ urgent checkboxes, tasks and lists are auto sorted to the top of the order. Urgent AND important tasks/lists are most significant, thus they will appear at the top, with ONLY urgent next, followed by ONLY important, and finally tasks/lists that are neither. Tasks also have the additonal sorting of moving completed tasks to the bottom of the list. 
 
-The user can also interact with the book via 'hovering,' which reveals the summary of whichever book is being looked at. 
+![task gif](https://imgur.com/aVmWMTq.gif)
 
-![click gif](https://imgur.com/cp9dt12.gif)
+Another unique feature of task manager is that when a task and/or list is marked as urgent, the border of the container turns red. Additonally, if something is marked as important, the name of the task or list turns red. 
 
-Finally, the user can click on a book to 'check it out,' which moves the clicked book to the my books page, and removes it from the collection.
+# Sources/ References
 
-![my books page](https://imgur.com/LtgoNs1.png)
-
-The third page of the app is labeled My Books. This page has much of the same functionality as the collection page with one less feature, that being the ability to like or dislike the book.
-
-![add book page](https://imgur.com/QcGchWe.png)
-
-The final page of the app is a form for the user to add a new book to the collection. On this page there is a form input section for a title, author, summary and the year of publication. 
-
-![add gif](https://imgur.com/d7cLzbW.gif)
-
-Upon filling out each section and submitting the form, the new book can be viewed in the collection page.
-
-## Image and Book Info Sources
-
-### Book Cover Image
-- [Image source](https://www.redbubble.com/i/notebook/Gold-Leaf-Leather-Book-by-Tree45/69867179.RXH2R)
-
-### Background Image
-- [Image source](https://images.pexels.com/photos/207662/pexels-photo-207662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)
-
-### Title Icon
-- [Image source](https://www.flaticon.com/free-icon/book_2232688)
-
-### Book Information
-- [Books Source](https://www.britannica.com/list/12-novels-considered-the-greatest-book-ever-written)
+Backend Repo: https://github.com/elizabethsabernethy/phase-3-project-backend
