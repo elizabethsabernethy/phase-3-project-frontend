@@ -13,6 +13,15 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
       setEditing(false)
     }
 
+    function handleEditing(){
+      if(list.complete){
+        alert('Cannot alter completed task')
+      }
+      else{
+        setEditing(true)
+      }
+    }
+
     function handleNewTask(newTask){
       setTasks([...tasks, newTask]) 
     }
@@ -26,6 +35,10 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
     }
 
     function handleChangeOfImportance(){
+      if(list.complete){
+        alert('Cannot alter completed task')
+      }
+      else{
     fetch(`http://localhost:9292/task-lists/importance/${list.id}`, {
       method: "PATCH",
       headers: {
@@ -38,8 +51,13 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
       .then((resp) => resp.json())
       .then((updatedList) => onUpdateListImportance(updatedList));
     }
+  }
 
     function handleChangeOfUrgency(){
+      if(list.complete){
+        alert('Cannot alter completed task')
+      }
+      else{
     fetch(`http://localhost:9292/task-lists/urgency/${list.id}`, {
       method: "PATCH",
       headers: {
@@ -52,6 +70,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
       .then((resp) => resp.json())
       .then((updatedList) => onUpdateListUrgency(updatedList));
     }
+  }
 
     function handleDeleteTask(deletedTask){
         const updatedTasks= tasks.filter((task) => task.id !== deletedTask.id);
@@ -92,7 +111,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
                {!editing ? <h2>{list.name}</h2> : <EditName list={list} onNameChange={handleNameChange}/>}
             </div>
             <div className="list-button-container">
-              <button onClick={()=> setEditing(true)}>✏️</button>
+              <button onClick={handleEditing}>✏️</button>
               <button onClick={handleDelete}>🗑️</button>
             </div>
             <div className="list-checkbox-container">
