@@ -57,7 +57,7 @@ function TaskListContainer(){
           <div className="filter-task-lists-div">
             <FilterTaskLists filterLists={filterLists}/>
           </div>
-          <div>
+          <div id="task-list-parent-container">
             {listsToShow.map((list)=>{
                     return <TaskList list={list} 
                     onDeleteList={handleDeleteList} 
