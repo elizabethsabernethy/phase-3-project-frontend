@@ -25,7 +25,7 @@ Each task, as mentioned previously, has a similar structure and functionality to
 
 Both tasks, and task-list are added to the page in ascending order of creation, with the newest task or list appearing at the bottom. However, through the use of the important/ urgent checkboxes, tasks and lists are auto sorted to the top of the order. Urgent AND important tasks/lists are most significant, thus they will appear at the top, with ONLY urgent next, followed by ONLY important, and finally tasks/lists that are neither. Tasks also have the additonal sorting of moving completed tasks to the bottom of the list. 
 
-![task gif](https://imgur.com/aVmWMTq.gif)
+![task-gif](https://imgur.com/aVmWMTq.gif)
 
 Another unique feature of task manager is that when a task and/or list is marked as urgent, the border of the container turns red. Additonally, if something is marked as important, the name of the task or list turns red. 
 
