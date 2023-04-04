@@ -33,7 +33,6 @@ width: 150px;
 }
 
 .in-list-task-container{
-display: flex;
 padding: 10px;
 }
 
@@ -72,9 +71,7 @@ padding: 10px;
 
 .list-container{
   display: inline-block;
-  float: left;
-  position: relative;
-  left:60px;
+  vertical-align: top;
   background-color: rgb(255, 255, 255);
   width: 25%;
   margin: 15px;
