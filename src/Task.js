@@ -61,8 +61,8 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, 
   }
 
     return(
-        <div className="task">
-          <div className="task-name">
+        <div className="task" style={task.urgent ? {border:'2px solid red'} : null}>
+          <div className="task-name" style={task.important ? {color:'red'} : null}>
             {!editing ? <h4 style={task.complete ? {textDecorationLine: 'line-through', textDecorationStyle: 'solid'} : null}>{task.name}</h4> : <EditTaskName task={task} onNameChange={handleNameChange}/>}
           </div>
             <div className="task-buttons">
