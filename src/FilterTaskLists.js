@@ -1,33 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
-function FilterTaskLists({filterLists, lists}){
-    const[importantChecked, setImportantChecked] = useState(false)
-    const[urgentChecked, setUrgentChecked] = useState(false)
+function FilterTaskLists({filterLists}){
 
     function handleSearchTasks(e){
         filterLists(e.target.value)
-    }
-
-    const importantListsToDisplay = lists.filter((list) => {
-        if (list.important) {
-        return list;
-        }
-        return false;
-      })
-
-    function handleFilterImportant(){
-        setImportantChecked((importantChecked)=>!importantChecked)
-        console.log(importantListsToDisplay)
-// Set important => !important
-//filter through list.important and reutrn said lists
-//if !importantChecked then show all lists, but if it is checked then show only list.important = true
-    }
-
-    function handleFilterUrgent(){
-        setUrgentChecked((urgentChecked)=>!urgentChecked)
-// Set urgent => !urgent
-//filter through list.urgent and reutrn said lists
-//if !urgentChecked then show all lists, but if it is checked then show only list.urgent = true
     }
 
     return(
@@ -39,24 +15,6 @@ function FilterTaskLists({filterLists, lists}){
             placeholder="Type a list name to search..."
             onChange={handleSearchTasks}
             />
-            <label>
-                Filter: Important
-                <input 
-                type="checkbox"
-                name="important"
-                onChange={handleFilterImportant}
-                checked={importantChecked}>
-                </input>
-            </label>
-            <label>
-                Filter: Urgent
-                <input 
-                type="checkbox"
-                name="urgent"
-                onChange={handleFilterUrgent}
-                checked={urgentChecked}>
-                </input>
-            </label>
       </div>
     )
 }
