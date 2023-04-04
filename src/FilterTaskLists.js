@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function FilterTaskLists({filterLists, getImportant}){
+function FilterTaskLists({filterLists, lists, setListsToDisplay, listsToDisplay}){
     const[importantChecked, setImportantChecked] = useState(false)
     const[urgentChecked, setUrgentChecked] = useState(false)
 
@@ -8,17 +8,21 @@ function FilterTaskLists({filterLists, getImportant}){
         filterLists(e.target.value)
     }
 
-    function handleFilterImportant(){
-        setImportantChecked((importantChecked)=> !importantChecked)
-    }
+    const importantListsToDisplay = lists.filter((list) => {
+        if (list.important) {
+        return list;
+        }
+        return false;
+      })
 
-    function handleFilterUrgent(){
-        setUrgentChecked((urgentChecked)=> !urgentChecked)
-    }
-
-    function sendImportant(){
-        handleFilterImportant()
-        getImportant(importantChecked)
+     function toggleImportantLists(){
+        if(listsToDisplay === lists){
+            setListsToDisplay(importantListsToDisplay);
+        }
+        else {
+            setListsToDisplay(lists);
+        }
+        setImportantChecked(importantChecked => !importantChecked)
     }
 
     return(
@@ -34,7 +38,7 @@ function FilterTaskLists({filterLists, getImportant}){
                 Filter: Important
                 <input 
                 type="checkbox"
-                onChange={sendImportant}
+                onChange={toggleImportantLists}
                 checked={importantChecked}>
                 </input>
             </label>
