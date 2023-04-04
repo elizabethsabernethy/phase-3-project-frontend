@@ -48,7 +48,8 @@ function TaskListContainer(){
           </div>
           <div className="filter-task-lists-div">
             <FilterTaskLists 
-            filterLists={filterLists}/>
+            filterLists={filterLists}
+            lists={lists}/>
           </div>
           <div>
             {listsToShow.map((list)=>{
