@@ -73,6 +73,14 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
       setShowTasks((showTasks) => !showTasks)
     }
 
+    const sortedImportantTasks = tasks.sort((a,b)=>{
+      return b.important - a.important
+    })
+
+    const sortedTasks = sortedImportantTasks.sort((a,b)=>{
+      return b.urgent - a.urgent
+    })
+
     return(
         <div className="list-container" style={list.urgent ? {borderColor:'red'} : null}>
           <div className="list-title-container" style={list.important ? {color:'red'} : null}>
@@ -111,7 +119,7 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
             </div>
           </div>
             <div className="task-container" hidden={showTasks ? true : false}>
-               {typeof tasks !== "undefined" ? tasks.map((task)=>{
+               {typeof tasks !== "undefined" ? sortedTasks.map((task)=>{
                 return <Task task={task} 
                 onDeleteTask={handleDeleteTask} 
                 onUpdateTaskImportance={handleTaskChanges}
