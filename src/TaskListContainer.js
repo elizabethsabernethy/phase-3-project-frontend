@@ -6,6 +6,7 @@ import FilterTaskLists from "./FilterTaskLists";
 function TaskListContainer(){
     const[lists, setLists] = useState([])
     const[filteredList, setFilteredList] = useState('')
+    const[listsToDisplay, setListsToDisplay] = useState(lists)
 
     useEffect(()=>{
         fetch('http://localhost:9292/task-lists')
@@ -37,10 +38,6 @@ function TaskListContainer(){
       setFilteredList(input)
     }
 
-    function handleImportantFilter(important){
-      console.log(important)
-    }
-
     
     const listsToShow = listsToDisplay.filter((list)=>{
       return ((list.name).toLowerCase()).match(filteredList.toLowerCase());
@@ -52,7 +49,11 @@ function TaskListContainer(){
             <TaskListForm onAddNewList={handleNewList}/>
           </div>
           <div className="filter-task-lists-div">
-            <FilterTaskLists filterLists={filterLists} getImportant={handleImportantFilter}/>
+            <FilterTaskLists 
+            filterLists={filterLists} 
+            lists={lists} 
+            setListsToDisplay={setListsToDisplay} 
+            listsToDisplay={listsToDisplay}/>
           </div>
           <div>
             {listsToShow.map((list)=>{
