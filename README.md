@@ -12,8 +12,6 @@ When a user first enters the website, they will see the Task Manager homepage, w
 
 The website may or may not have preloaded lists depending on whether a user has previosuly added a list. 
 
-![task-list gif](https://imgur.com/Td1d58b.gif)
-
 Task-lists are broken down into 3 main sections, the title section, the add task section, and the tasks section. The title section displays the name of the task-list, an edit button for the name of the list, a delete button, which deletes the list and all contained tasks, and two checkboxes to denote importance and/or urgency. 
 The next section has a form which adds tasks to the list, and a button to hide tasks, or show them if they've been previously hidden. 
 
@@ -25,10 +23,10 @@ Each task, as mentioned previously, has a similar structure and functionality to
 
 Both tasks, and task-list are added to the page in ascending order of creation, with the newest task or list appearing at the bottom. However, through the use of the important/ urgent checkboxes, tasks and lists are auto sorted to the top of the order. Urgent AND important tasks/lists are most significant, thus they will appear at the top, with ONLY urgent next, followed by ONLY important, and finally tasks/lists that are neither. Tasks also have the additonal sorting of moving completed tasks to the bottom of the list. 
 
-![task-gif](https://imgur.com/QXXAO0l.gif)
-
 Another unique feature of task manager is that when a task and/or list is marked as urgent, the border of the container turns red. Additonally, if something is marked as important, the name of the task or list turns red. 
 
 # Sources/ References
 
 Backend Repo: https://github.com/elizabethsabernethy/phase-3-project-backend
+
+Youtube Walk-through: https://youtu.be/exaogYbzFq0
