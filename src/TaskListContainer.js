@@ -37,21 +37,6 @@ function TaskListContainer(){
     function filterLists(input){
       setFilteredList(input)
     }
-
-    function getImportantState(important){
-      if(!important){
-        const importantLists = lists.filter((list)=>{
-          if(list.important){
-            return list
-          }
-          return false
-        })
-        setListsToDisplay(importantLists)
-      }
-      else{
-        setListsToDisplay(lists)
-      }
-    }
     
     const listsToShow = listsToDisplay.filter((list)=>{
       return ((list.name).toLowerCase()).match(filteredList.toLowerCase());
@@ -64,8 +49,7 @@ function TaskListContainer(){
           </div>
           <div className="filter-task-lists-div">
             <FilterTaskLists 
-            filterLists={filterLists}
-            sendImportantState={getImportantState}/>
+            filterLists={filterLists}/>
           </div>
           <div>
             {listsToShow.map((list)=>{
