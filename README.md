@@ -1,4 +1,0 @@
-- has 3 filters for task-lists, one for importance, one for urgency, and one for completion status
-- can search for specific task-list
-- each task list individually should be able to organize tasks based on importance, urgency, or completed.
-- has hide completed button within task-list
