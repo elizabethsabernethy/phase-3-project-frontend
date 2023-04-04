@@ -74,8 +74,8 @@ function TaskList({list, onDeleteList, onUpdateListImportance, onUpdateListUrgen
     }
 
     return(
-        <div className="list-container">
-          <div className="list-title-container">
+        <div className="list-container" style={list.urgent ? {borderColor:'red'} : null}>
+          <div className="list-title-container" style={list.important ? {color:'red'} : null}>
             <div className="list-name-display">
                {!editing ? <h2>{list.name}</h2> : <EditName list={list} onNameChange={handleNameChange}/>}
             </div>
