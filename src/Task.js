@@ -14,6 +14,10 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, 
     }
 
     function handleChangeOfImportance(){
+      if(task.complete){
+        alert('Cannot alter completed task')
+      }
+      else{
         fetch(`http://localhost:9292/tasks/importance/${task.id}`, {
           method: "PATCH",
           headers: {
@@ -26,8 +30,13 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, 
           .then((resp) => resp.json())
           .then((updatedTask) => onUpdateTaskImportance(updatedTask));
         }
+      }
     
         function handleChangeOfUrgency(){
+          if(task.complete){
+            alert('Cannot alter completed task')
+          }
+          else{
         fetch(`http://localhost:9292/tasks/urgency/${task.id}`, {
           method: "PATCH",
           headers: {
@@ -40,6 +49,7 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, 
           .then((resp) => resp.json())
           .then((updatedTask) => onUpdateTaskUrgency(updatedTask));
         }
+      }
 
     function handleComplete(){
         fetch(`http://localhost:9292/tasks/complete/${task.id}`, {
@@ -60,9 +70,18 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, 
       setEditing(false)
   }
 
+    function handleEditing(){
+      if(task.complete){
+        alert('Cannot alter completed task')
+      }
+      else{
+        setEditing(true)
+      }
+    }
+
     return(
-        <div className="task" style={task.urgent ? {border:'2px solid red'} : null}>
-          <div className="task-name" style={task.important ? {color:'red'} : null}>
+        <div className="task" style={task.urgent && !task.complete ? {border:'2px solid red'} : null}>
+          <div className="task-name" style={task.important && !task.complete ? {color:'red'} : null}>
             {!editing ? <h4 style={task.complete ? {textDecorationLine: 'line-through', textDecorationStyle: 'solid'} : null}>{task.name}</h4> : <EditTaskName task={task} onNameChange={handleNameChange}/>}
           </div>
             <div className="task-buttons">
@@ -85,7 +104,7 @@ function Task({task, onDeleteTask, onUpdateTaskImportance, onUpdateTaskUrgency, 
               </label>
             </div> 
               <button onClick={handleComplete}>✅</button>
-              <button onClick={()=> setEditing(true)}>✏️</button>
+              <button onClick={handleEditing}>✏️</button>
               <button onClick={handleDelete}>🗑️</button>
             </div>     
         </div>
